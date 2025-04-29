@@ -15,6 +15,7 @@
   "scripts": {
     "build": "tsc && node -e \"require('fs').chmodSync('dist/index.js', '755')\"",
     "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
     "format": "prettier --write \"**/*.{ts,json,md}\"",
     "prepare": "husky"
   },
@@ -24,6 +25,7 @@
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "eslint": "^8.57.1",
+    "eslint-plugin-unused-imports": "^4.1.4",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "prettier": "^3.5.3",
