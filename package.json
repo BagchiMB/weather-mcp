@@ -1,0 +1,44 @@
+{
+  "name": "weather",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "weather": "./dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.10.2",
+    "node-fetch": "2",
+    "zod": "^3.24.3"
+  },
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('dist/index.js', '755')\"",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write \"**/*.{ts,json,md}\"",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "@types/node-fetch": "2",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3"
+  },
+  "files": [
+    "dist"
+  ],
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  }
+}
